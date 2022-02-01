@@ -32,11 +32,8 @@ public class MongockConfiguration {
     }
 
     @Bean
-    SpringDataMongoV3Driver connectionDriver(final MongoTemplate mongoTemplate) {
-        final SpringDataMongoV3Driver driver = SpringDataMongoV3Driver.withDefaultLock(mongoTemplate);
-        driver.enableTransaction();
-
-        return driver;
+    SpringDataMongoV3Driver springDataMongoDriver(final MongoTemplate mongoTemplate) {
+        return SpringDataMongoV3Driver.withDefaultLock(mongoTemplate);
     }
 
 }

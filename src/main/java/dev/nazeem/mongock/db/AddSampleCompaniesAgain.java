@@ -4,8 +4,6 @@ import static org.springframework.data.mongodb.core.query.Criteria.where;
 import static org.springframework.data.mongodb.core.query.Query.query;
 
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
 
 import dev.nazeem.mongock.company.Company;
 import io.mongock.api.annotations.ChangeUnit;
@@ -15,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 
 
 @Slf4j
-@ChangeUnit(id = "add-sample-companies-again", order = "3", author = "nazeem.soeltan")
+@ChangeUnit(id = "add-sample-companies-again", order = "4", author = "nazeem.soeltan")
 public class AddSampleCompaniesAgain {
 
     private static final String COMPANY_NAME = "sample-mongock-again";
@@ -31,8 +29,6 @@ public class AddSampleCompaniesAgain {
 
     @RollbackExecution
     public void executeRollback(final MongoTemplate mongoTemplate) {
-        log.info("Rolling back changes - add-sample-companies-again");
-
         mongoTemplate.remove(query(where("name").is(COMPANY_NAME)));
     }
 

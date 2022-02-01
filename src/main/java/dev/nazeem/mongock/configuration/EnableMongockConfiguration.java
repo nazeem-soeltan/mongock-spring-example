@@ -15,7 +15,7 @@ import io.mongock.runner.springboot.EnableMongock;
 public class EnableMongockConfiguration {
 
     @Bean
-    SpringDataMongoV3Driver mongoV3Driver(final MongoTemplate mongoTemplate) {
+    SpringDataMongoV3Driver springDataMongoDriver(final MongoTemplate mongoTemplate) {
         return SpringDataMongoV3Driver.withDefaultLock(mongoTemplate);
     }
 

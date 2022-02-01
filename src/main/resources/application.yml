@@ -1,6 +1,6 @@
 example:
   config-bean:
-    enabled: true # config bean takes precedence over mongock's spring boot spring boot config props.
+    enabled: false # config bean takes precedence over mongock's spring boot spring boot config props.
 
 
 mongock:
